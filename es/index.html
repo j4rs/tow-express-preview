@@ -238,6 +238,8 @@
     background-size:cover; background-position:center; box-shadow:0 14px 34px rgba(20,20,26,.2)}
   .video-facade::after{content:""; position:absolute; inset:0; background:rgba(0,0,0,.3); transition:background .2s}
   .video-facade:hover::after{background:rgba(0,0,0,.15)}
+  .video-facade.playing{cursor:default}
+  .video-facade.playing::after{content:none}
   .video-play{position:absolute; z-index:1; top:50%; left:50%; transform:translate(-50%,-50%);
     width:78px; height:78px; border-radius:50%; border:0; cursor:pointer; padding:0 0 0 6px;
     background:var(--red); color:#fff; font-size:1.7rem; display:flex; align-items:center; justify-content:center;
@@ -523,7 +525,9 @@
 (function(){
   var f = document.querySelector('.video-facade');
   if(!f) return;
+  function onKey(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); play(); } }
   function play(){
+    if(f.classList.contains('playing')) return;   // don't restart once loaded
     var id = f.getAttribute('data-id');
     var ifr = document.createElement('iframe');
     ifr.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
@@ -532,9 +536,14 @@
     ifr.setAttribute('allowfullscreen', '');
     f.innerHTML = '';
     f.appendChild(ifr);
+    f.classList.add('playing');                    // removes the click-blocking overlay
+    f.removeEventListener('click', play);          // stop intercepting clicks on the player
+    f.removeEventListener('keydown', onKey);
+    f.removeAttribute('role');
+    f.removeAttribute('tabindex');
   }
   f.addEventListener('click', play);
-  f.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); play(); } });
+  f.addEventListener('keydown', onKey);
 })();
 </script>
 
