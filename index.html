@@ -142,6 +142,11 @@
   .logo{height:38px; width:auto; display:block}
   .header-call .ph-i{display:none}
   .hc-short{display:none}
+  .nav-right{display:flex; align-items:center; gap:10px}
+  .langtoggle{display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden}
+  .langbtn{border:0; background:#fff; color:var(--muted); font-weight:800; font-size:.78rem; padding:7px 11px; cursor:pointer; line-height:1; letter-spacing:.3px}
+  .langbtn+.langbtn{border-left:1px solid var(--line)}
+  .langbtn.on{background:var(--red); color:#fff}
   .nav-links{display:none; gap:22px}
   .nav-links a{color:var(--ink); text-decoration:none; font-weight:600; font-size:.95rem}
   .nav-links a:hover{color:var(--red)}
@@ -277,74 +282,77 @@
 </head>
 <body>
 
-<div class="topbar">⚡ 24/7 Emergency Towing in Miami-Dade — <a href="tel:+13055510077">Call (305) 551-0077</a> · Se Habla Español</div>
+<div class="topbar"><span data-es="⚡ Grúas de Emergencia 24/7 en Miami-Dade — ">⚡ 24/7 Emergency Towing in Miami-Dade — </span><a href="tel:+13055510077" data-es="Llame al (305) 551-0077">Call (305) 551-0077</a><span data-es=" · Se Habla Español"> · Se Habla Español</span></div>
 
 <header class="site">
   <div class="wrap nav">
     <a href="#top" class="brand"><img src="images/logo.png" alt="Tow Express — 24/7 Towing in Miami" class="logo"></a>
     <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#about">About</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
+      <a href="#services" data-es="Servicios">Services</a>
+      <a href="#gallery" data-es="Galería">Gallery</a>
+      <a href="#about" data-es="Nosotros">About</a>
+      <a href="#faq" data-es="Preguntas">FAQ</a>
+      <a href="#contact" data-es="Contacto">Contact</a>
     </nav>
-    <a href="tel:+13055510077" class="btn header-call"><span class="ph-i">📞</span><span class="hc-full">Call (305) 551-0077</span><span class="hc-short">Call</span></a>
+    <div class="nav-right">
+      <div class="langtoggle" role="group" aria-label="Language / Idioma"><button type="button" class="langbtn" data-lang="en">EN</button><button type="button" class="langbtn" data-lang="es">ES</button></div>
+      <a href="tel:+13055510077" class="btn header-call"><span class="ph-i">📞</span><span class="hc-full" data-es="Llame (305) 551-0077">Call (305) 551-0077</span><span class="hc-short" data-es="Llamar">Call</span></a>
+    </div>
   </div>
 </header>
 
 <a id="top"></a>
 <section class="hero">
   <div class="wrap">
-    <span class="badge">OVER 17 YEARS OF TOWING IN MIAMI</span>
-    <h1>Towing Service in Miami</h1>
-    <p>A reliable towing service shouldn't be limited to business hours. When you need help — day or night — Tow Express is ready with a damage-free tow, the first time, every time.</p>
+    <span class="badge" data-es="MÁS DE 17 AÑOS DE GRÚAS EN MIAMI">OVER 17 YEARS OF TOWING IN MIAMI</span>
+    <h1 data-es="Servicio de Grúa en Miami">Towing Service in Miami</h1>
+    <p data-es="Un servicio de grúa confiable no debería limitarse al horario de oficina. Cuando necesita ayuda — de día o de noche — Tow Express está listo para remolcar sin daños, a la primera y siempre.">A reliable towing service shouldn't be limited to business hours. When you need help — day or night — Tow Express is ready with a damage-free tow, the first time, every time.</p>
     <div class="cta-row">
-      <a href="tel:+13055510077" class="btn big">📞 Call Now (305) 551-0077</a>
-      <a href="#services" class="btn big ghost">See Our Services</a>
+      <a href="tel:+13055510077" class="btn big" data-es="📞 Llame Ahora (305) 551-0077">📞 Call Now (305) 551-0077</a>
+      <a href="#services" class="btn big ghost" data-es="Ver Servicios">See Our Services</a>
     </div>
     <div class="trust">
-      <span><b>24/7</b> Emergency Service</span>
-      <span><b>Se Habla</b> Español</span>
-      <span><b>Flatbed &amp;</b> Long-Distance</span>
-      <span><b>Cash for</b> Junk Cars</span>
+      <span data-es="Servicio de Emergencia 24/7">24/7 Emergency Service</span>
+      <span data-es="Se Habla Español">Se Habla Español</span>
+      <span data-es="Plataforma y Larga Distancia">Flatbed &amp; Long-Distance</span>
+      <span data-es="Compramos Chatarra">Cash for Junk Cars</span>
     </div>
   </div>
 </section>
 
 <section id="services">
   <div class="wrap">
-    <h2>Our Towing &amp; Roadside Services</h2>
-    <p class="sub">Full-service towing and roadside assistance across Miami-Dade — with state-of-the-art equipment and operators who are car people before anything else.</p>
+    <h2 data-es="Nuestros Servicios de Grúa y Asistencia">Our Towing &amp; Roadside Services</h2>
+    <p class="sub" data-es="Servicio completo de grúa y asistencia en carretera en todo Miami-Dade — con equipo de última generación y operadores que aman los autos.">Full-service towing and roadside assistance across Miami-Dade — with state-of-the-art equipment and operators who are car people before anything else.</p>
     <div class="grid">
-      <div class="card"><span class="ic">🚨</span>24-Hour Roadside Assistance</div>
-      <div class="card"><span class="ic">🛻</span>Flatbed Towing</div>
-      <div class="card"><span class="ic">🛣️</span>Long-Distance Towing</div>
-      <div class="card"><span class="ic">🔑</span>Lockout Service</div>
-      <div class="card"><span class="ic">🔋</span>Jumpstarts</div>
-      <div class="card"><span class="ic">⛽</span>Fuel Delivery</div>
-      <div class="card"><span class="ic">🛞</span>Tire Changes</div>
-      <div class="card"><span class="ic">🪝</span>Winch-Outs</div>
-      <div class="card"><span class="ic">🏍️</span>Motorcycle Towing</div>
-      <div class="card"><span class="ic">🚚</span>Equipment &amp; Trailer Transport</div>
-      <div class="card"><span class="ic">📦</span>Storage Container &amp; Shed Moving</div>
-      <div class="card"><span class="ic">💵</span>Junk Car Buying — Cash Same Day</div>
+      <div class="card"><span class="ic">🚨</span><span data-es="Asistencia en Carretera 24 Horas">24-Hour Roadside Assistance</span></div>
+      <div class="card"><span class="ic">🛻</span><span data-es="Grúa de Plataforma">Flatbed Towing</span></div>
+      <div class="card"><span class="ic">🛣️</span><span data-es="Remolque de Larga Distancia">Long-Distance Towing</span></div>
+      <div class="card"><span class="ic">🔑</span><span data-es="Apertura de Autos">Lockout Service</span></div>
+      <div class="card"><span class="ic">🔋</span><span data-es="Paso de Corriente">Jumpstarts</span></div>
+      <div class="card"><span class="ic">⛽</span><span data-es="Entrega de Gasolina">Fuel Delivery</span></div>
+      <div class="card"><span class="ic">🛞</span><span data-es="Cambio de Gomas">Tire Changes</span></div>
+      <div class="card"><span class="ic">🪝</span><span data-es="Rescate con Winche">Winch-Outs</span></div>
+      <div class="card"><span class="ic">🏍️</span><span data-es="Grúa para Motos">Motorcycle Towing</span></div>
+      <div class="card"><span class="ic">🚚</span><span data-es="Transporte de Equipos y Tráileres">Equipment &amp; Trailer Transport</span></div>
+      <div class="card"><span class="ic">📦</span><span data-es="Mudanza de Contenedores y Casetas">Storage Container &amp; Shed Moving</span></div>
+      <div class="card"><span class="ic">💵</span><span data-es="Compra de Chatarra — Efectivo el Mismo Día">Junk Car Buying — Cash Same Day</span></div>
     </div>
   </div>
 </section>
 
 <section id="about" class="soft about">
   <div class="wrap">
-    <h2>About Tow Express</h2>
-    <p>When we founded Tow Express over 17 years ago, we opened shop with one simple, all-encompassing goal: to deliver the most reliable towing and roadside assistance services possible to our customers throughout Miami and the surrounding areas. We knew our winning combination of equipment and expertise would keep us ahead of the competition.</p>
-    <p>Nearly two decades after our founding, Tow Express has cemented a reputation as one of Miami's premier emergency towing providers. In addition to our basic towing and roadside assistance services, we also buy junk cars. If your car seems to have reached the end of its lifespan, Tow Express will buy it for cash on the spot with free same-day pickup!</p>
+    <h2 data-es="Sobre Tow Express">About Tow Express</h2>
+    <p data-es="Cuando fundamos Tow Express hace más de 17 años, abrimos con una meta simple y clara: brindar el servicio de grúa y asistencia en carretera más confiable posible a nuestros clientes en todo Miami y sus alrededores. Sabíamos que nuestra combinación de equipo y experiencia nos mantendría por delante de la competencia.">When we founded Tow Express over 17 years ago, we opened shop with one simple, all-encompassing goal: to deliver the most reliable towing and roadside assistance services possible to our customers throughout Miami and the surrounding areas. We knew our winning combination of equipment and expertise would keep us ahead of the competition.</p>
+    <p data-es="Casi dos décadas después, Tow Express se ha ganado la reputación de ser uno de los principales proveedores de grúas de emergencia de Miami. Además de nuestros servicios de grúa y asistencia en carretera, también compramos autos chatarra. Si su auto llegó al final de su vida útil, ¡Tow Express se lo compra en efectivo en el acto, con recogida gratis el mismo día!">Nearly two decades after our founding, Tow Express has cemented a reputation as one of Miami's premier emergency towing providers. In addition to our basic towing and roadside assistance services, we also buy junk cars. If your car seems to have reached the end of its lifespan, Tow Express will buy it for cash on the spot with free same-day pickup!</p>
   </div>
 </section>
 
 <section id="gallery" class="soft">
   <div class="wrap">
-    <h2>Our Trucks &amp; Work</h2>
-    <p class="sub">17+ years on Miami roads. State-of-the-art equipment for a damage-free tow — cars, motorcycles, heavy equipment, and more. Tap any photo to enlarge.</p>
+    <h2 data-es="Nuestras Grúas y Trabajo">Our Trucks &amp; Work</h2>
+    <p class="sub" data-es="Más de 17 años en las calles de Miami. Equipo de última generación para un remolque sin daños — autos, motos, equipo pesado y más. Toque cualquier foto para ampliar.">17+ years on Miami roads. State-of-the-art equipment for a damage-free tow — cars, motorcycles, heavy equipment, and more. Tap any photo to enlarge.</p>
     <div class="gallery" id="galleryGrid">
         <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-1.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-1.jpg" alt="Tow Express truck"></a>
         <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-2.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-2.jpg" alt="Tow Express truck"></a>
@@ -412,45 +420,45 @@
 
 <section id="faq">
   <div class="wrap">
-    <h2>Frequently Asked Questions</h2>
-    <p class="sub">Quick answers to what Miami drivers ask us most.</p>
+    <h2 data-es="Preguntas Frecuentes">Frequently Asked Questions</h2>
+    <p class="sub" data-es="Respuestas rápidas a lo que más nos preguntan los conductores de Miami.">Quick answers to what Miami drivers ask us most.</p>
 
     <details open>
-      <summary>Do you offer 24-hour towing near me in Miami?</summary>
-      <p>Yes. Tow Express provides 24-hour towing and roadside assistance across Miami-Dade County, seven days a week — including nights, weekends, and holidays. Call <a href="tel:+13055510077">(305) 551-0077</a> any time.</p>
+      <summary data-es="¿Ofrecen servicio de grúa 24 horas cerca de mí en Miami?">Do you offer 24-hour towing near me in Miami?</summary>
+      <p data-es="Sí. Tow Express ofrece servicio de grúa y asistencia en carretera las 24 horas en todo el condado de Miami-Dade, los siete días de la semana — incluidas noches, fines de semana y días festivos. Llame al (305) 551-0077 a cualquier hora.">Yes. Tow Express provides 24-hour towing and roadside assistance across Miami-Dade County, seven days a week — including nights, weekends, and holidays. Call (305) 551-0077 any time.</p>
     </details>
     <details>
-      <summary>How fast can a tow truck reach me?</summary>
-      <p>In most of Miami-Dade, we can typically reach you quickly. Call <a href="tel:+13055510077">(305) 551-0077</a>, tell us your location, and we'll dispatch the nearest available truck right away.</p>
+      <summary data-es="¿Qué tan rápido puede llegar una grúa?">How fast can a tow truck reach me?</summary>
+      <p data-es="En la mayor parte de Miami-Dade, solemos llegar rápido. Llame al (305) 551-0077, díganos su ubicación y enviamos de inmediato la grúa disponible más cercana.">In most of Miami-Dade, we can typically reach you quickly. Call (305) 551-0077, tell us your location, and we'll dispatch the nearest available truck right away.</p>
     </details>
     <details>
-      <summary>Do you buy junk cars in Miami?</summary>
-      <p>Yes. We buy junk cars for cash on the spot with free same-day pickup anywhere in the Miami area — whether or not the vehicle runs.</p>
+      <summary data-es="¿Compran autos chatarra en Miami?">Do you buy junk cars in Miami?</summary>
+      <p data-es="Sí. Compramos autos chatarra en efectivo en el acto, con recogida gratis el mismo día en toda el área de Miami — funcione o no el vehículo.">Yes. We buy junk cars for cash on the spot with free same-day pickup anywhere in the Miami area — whether or not the vehicle runs.</p>
     </details>
     <details>
-      <summary>Do you offer flatbed and long-distance towing?</summary>
-      <p>Yes. We provide damage-free flatbed towing for cars, motorcycles, and specialty vehicles, plus long-distance towing beyond the Miami area. Call <a href="tel:+13055510077">(305) 551-0077</a> for a quote.</p>
+      <summary data-es="¿Ofrecen grúa de plataforma y de larga distancia?">Do you offer flatbed and long-distance towing?</summary>
+      <p data-es="Sí. Ofrecemos grúa de plataforma sin daños para autos, motos y vehículos especiales, además de remolque de larga distancia fuera del área de Miami. Llame al (305) 551-0077 para una cotización.">Yes. We provide damage-free flatbed towing for cars, motorcycles, and specialty vehicles, plus long-distance towing beyond the Miami area. Call (305) 551-0077 for a quote.</p>
     </details>
     <details>
-      <summary>¿Ofrecen servicio de grúa en español?</summary>
-      <p>Sí. Se habla español. Tow Express ofrece servicio de grúa y asistencia en carretera las 24 horas en Miami-Dade. Llame al <a href="tel:+13055510077">(305) 551-0077</a>.</p>
+      <summary data-es="¿Atienden también en inglés?">Do you speak Spanish? / ¿Hablan español?</summary>
+      <p data-es="Sí. Nuestro equipo habla español e inglés, las 24 horas. Llame al (305) 551-0077 y con gusto le atendemos en su idioma.">Yes — se habla español. Our team speaks both English and Spanish, 24/7. Call (305) 551-0077 and we'll help you in your language.</p>
     </details>
   </div>
 </section>
 
 <section id="contact" class="soft">
   <div class="wrap">
-    <h2>Contact Tow Express</h2>
-    <p class="sub">Stuck on the road? Call now — we answer 24/7.</p>
+    <h2 data-es="Contacte a Tow Express">Contact Tow Express</h2>
+    <p class="sub" data-es="¿Varado en la carretera? Llame ahora — contestamos 24/7.">Stuck on the road? Call now — we answer 24/7.</p>
     <div class="contact-grid">
       <div>
         <ul class="info">
-          <li><span class="ic">📞</span><b>Phone:</b> <a href="tel:+13055510077">(305) 551-0077</a> · Se Habla Español</li>
-          <li><span class="ic">✉️</span><b>Email:</b> <a href="mailto:towexpress77@gmail.com">towexpress77@gmail.com</a></li>
-          <li><span class="ic">📍</span><b>Location:</b> 11351 SW 27th St, Miami, FL 33165</li>
-          <li><span class="ic">🕑</span><b>Hours:</b> Open 24 hours, 7 days a week</li>
+          <li><span class="ic">📞</span><b data-es="Teléfono:">Phone:</b> <a href="tel:+13055510077">(305) 551-0077</a><span data-es=" · Se Habla Español"> · Se Habla Español</span></li>
+          <li><span class="ic">✉️</span><b data-es="Correo:">Email:</b> <a href="mailto:towexpress77@gmail.com">towexpress77@gmail.com</a></li>
+          <li><span class="ic">📍</span><b data-es="Ubicación:">Location:</b> 11351 SW 27th St, Miami, FL 33165</li>
+          <li><span class="ic">🕑</span><b data-es="Horario:">Hours:</b> <span data-es="Abierto 24 horas, 7 días a la semana">Open 24 hours, 7 days a week</span></li>
         </ul>
-        <a href="tel:+13055510077" class="btn big">📞 Call (305) 551-0077</a>
+        <a href="tel:+13055510077" class="btn big" data-es="📞 Llamar (305) 551-0077">📞 Call (305) 551-0077</a>
       </div>
       <iframe class="map" loading="lazy" title="Tow Express location map"
         src="https://www.google.com/maps?q=11351+SW+27th+St,+Miami,+FL+33165&output=embed"></iframe>
@@ -467,11 +475,11 @@
       <a href="https://www.youtube.com/channel/UCJ_uxq0tv-qBwHEW-Zs1-4Q" rel="noopener">YouTube</a>
     </p>
     <p>Tow Express · 11351 SW 27th St, Miami, FL 33165 · <a href="tel:+13055510077">(305) 551-0077</a></p>
-    <p style="color:#8a8a93">24/7 Towing &amp; Roadside Assistance serving Miami-Dade County for 17+ years.</p>
+    <p style="color:#8a8a93" data-es="Grúas y Asistencia en Carretera 24/7 en el condado de Miami-Dade por más de 17 años.">24/7 Towing &amp; Roadside Assistance serving Miami-Dade County for 17+ years.</p>
   </div>
 </footer>
 
-<a href="tel:+13055510077" class="callbar"><span class="ph">📞</span> Call Now — (305) 551-0077</a>
+<a href="tel:+13055510077" class="callbar"><span class="ph">📞</span> <span data-es="Llame Ahora — (305) 551-0077">Call Now — (305) 551-0077</span></a>
 
 
 <div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
@@ -481,6 +489,38 @@
   <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#8250;</button>
   <div class="lb-count" id="lbCount"></div>
 </div>
+
+<script>
+// Bilingual EN/ES — auto-detects browser language, remembers manual choice.
+(function(){
+  var META = {
+    en: { title: "Towing Service in Miami | Fast & Reliable 24/7 | Tow Express",
+          desc: "Tow Express: 24/7 towing & roadside assistance in Miami-Dade for over 17 years. Flatbed, long-distance, lockouts, jumpstarts, fuel delivery, junk car buying. Se Habla Español. Call (305) 551-0077." },
+    es: { title: "Servicio de Grúa en Miami | Rápido y Confiable 24/7 | Tow Express",
+          desc: "Tow Express: servicio de grúa y asistencia en carretera 24/7 en Miami-Dade por más de 17 años. Plataforma, larga distancia, apertura de autos, paso de corriente, gasolina y compra de chatarra. Se Habla Español. Llame al (305) 551-0077." }
+  };
+  var nodes = document.querySelectorAll('[data-es]');
+  nodes.forEach(function(el){ el.setAttribute('data-en', el.textContent); });
+  function apply(lang){
+    if(lang !== 'es') lang = 'en';
+    document.documentElement.setAttribute('lang', lang);
+    nodes.forEach(function(el){ el.textContent = el.getAttribute('data-' + lang); });
+    var m = META[lang];
+    document.title = m.title;
+    var d = document.querySelector('meta[name="description"]'); if(d) d.setAttribute('content', m.desc);
+    var og = document.querySelector('meta[property="og:title"]'); if(og) og.setAttribute('content', m.title);
+    document.querySelectorAll('.langbtn').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-lang') === lang); });
+    try{ localStorage.setItem('te_lang', lang); }catch(e){}
+  }
+  var saved = null; try{ saved = localStorage.getItem('te_lang'); }catch(e){}
+  var nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+  var initial = saved || (nav.indexOf('es') === 0 ? 'es' : 'en');
+  document.querySelectorAll('.langbtn').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.getAttribute('data-lang')); });
+  });
+  apply(initial);
+})();
+</script>
 
 <script>
 // Scroll-reveal: JS adds the hidden state, so no-JS users still see everything.
