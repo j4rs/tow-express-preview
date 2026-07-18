@@ -140,33 +140,59 @@
   .brand{font-weight:800; font-size:1.15rem; letter-spacing:.3px; text-decoration:none; color:var(--ink); display:flex; align-items:center}
   .brand span{color:var(--red)}
   .logo{height:38px; width:auto; display:block}
+  .header-call .ph-i{display:none}
+  .hc-short{display:none}
   .nav-links{display:none; gap:22px}
   .nav-links a{color:var(--ink); text-decoration:none; font-weight:600; font-size:.95rem}
   .nav-links a:hover{color:var(--red)}
-  .btn{display:inline-block; background:var(--red); color:#fff; text-decoration:none; font-weight:700;
-    padding:11px 18px; border-radius:9px; box-shadow:0 2px 10px rgba(200,16,46,.25); white-space:nowrap}
-  .btn:hover{background:var(--red-dark)}
-  .btn.ghost{background:#fff; color:var(--red); border:2px solid var(--red); box-shadow:none}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:6px; background:var(--red);
+    color:#fff; text-decoration:none; font-weight:700; padding:11px 18px; border-radius:10px; min-height:44px;
+    box-shadow:0 4px 14px rgba(200,16,46,.32); white-space:nowrap;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease}
+  .btn:hover{background:var(--red-dark); transform:translateY(-2px); box-shadow:0 8px 22px rgba(200,16,46,.4)}
+  .btn:active{transform:translateY(0)}
+  .btn.ghost{background:rgba(255,255,255,.08); color:#fff; border:2px solid rgba(255,255,255,.7); box-shadow:none; backdrop-filter:blur(4px)}
+  .btn.ghost:hover{background:#fff; color:var(--red); border-color:#fff}
 
   /* hero */
-  .hero{background:linear-gradient(180deg,#1b1b1f 0%,#2a2a30 100%); color:#fff; text-align:center;
-    padding:64px 0 72px}
-  .badge{display:inline-block; background:rgba(245,179,1,.15); color:var(--gold); border:1px solid rgba(245,179,1,.4);
-    font-weight:700; font-size:.82rem; padding:6px 14px; border-radius:999px; margin-bottom:18px; letter-spacing:.4px}
-  .hero h1{font-size:clamp(2rem,6vw,3.4rem); margin-bottom:.3em}
-  .hero p{color:#d7d7dd; max-width:620px; margin:0 auto 28px; font-size:1.08rem}
+  .hero{position:relative; color:#fff; text-align:center; padding:72px 0 80px; overflow:hidden;
+    background:
+      linear-gradient(180deg, rgba(12,12,15,.74) 0%, rgba(12,12,15,.52) 42%, rgba(12,12,15,.9) 100%),
+      #14141a url('images/1920-1.jpg') center 30%/cover no-repeat;}
+  .hero .wrap{position:relative; z-index:1}
+  .hero h1,.hero p{text-shadow:0 2px 18px rgba(0,0,0,.55)}
+  .badge{display:inline-block; background:rgba(245,179,1,.18); color:var(--gold); border:1px solid rgba(245,179,1,.5);
+    font-weight:700; font-size:.8rem; padding:7px 15px; border-radius:999px; margin-bottom:18px; letter-spacing:.5px;
+    backdrop-filter:blur(4px)}
+  .hero h1{font-size:clamp(2.1rem,6.4vw,3.5rem); margin-bottom:.28em; letter-spacing:-.01em}
+  .hero p{color:#e7e7ee; max-width:600px; margin:0 auto 30px; font-size:1.08rem}
   .cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
-  .btn.big{font-size:1.15rem; padding:15px 26px}
-  .trust{margin-top:26px; display:flex; gap:22px; justify-content:center; flex-wrap:wrap; color:#b9b9c2; font-size:.9rem}
+  .btn.big{font-size:1.15rem; padding:16px 26px}
+  .trust{margin-top:30px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap}
+  .trust span{background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); backdrop-filter:blur(4px);
+    padding:8px 14px; border-radius:999px; font-size:.86rem; color:#e7e7ee}
   .trust b{color:#fff}
 
-  section{padding:56px 0}
+  section{padding:56px 0; scroll-margin-top:70px}
   .soft{background:var(--soft)}
+
+  /* modern section headings */
+  h2{position:relative; padding-bottom:12px}
+  h2::after{content:""; position:absolute; left:50%; bottom:0; transform:translateX(-50%);
+    width:54px; height:3px; border-radius:3px; background:linear-gradient(90deg,var(--red),var(--gold))}
+
+  /* scroll reveal (added by JS; no-JS keeps content visible) */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .55s ease, transform .55s ease}
+  .reveal.in{opacity:1; transform:none}
+  @media(prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none} }
 
   /* services grid */
   .grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
-  .card{background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px 16px; font-weight:600}
-  .card .ic{font-size:1.5rem; display:block; margin-bottom:6px}
+  .card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px 16px; font-weight:600;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
+  .card:hover{transform:translateY(-4px); box-shadow:0 12px 28px rgba(20,20,26,.1); border-color:transparent}
+  .card .ic{font-size:1.5rem; display:flex; align-items:center; justify-content:center; width:48px; height:48px;
+    margin-bottom:12px; border-radius:12px; background:linear-gradient(135deg,#fff0f2,#fff7e6)}
   .soft .card{background:#fff}
 
   /* about */
@@ -214,11 +240,29 @@
   .lb-count{position:absolute; bottom:18px; left:50%; transform:translateX(-50%); color:#ddd; font-size:.9rem}
 
   /* sticky mobile call button */
-  .callbar{position:fixed; left:0; right:0; bottom:0; z-index:50; background:var(--red);
-    display:flex; align-items:center; justify-content:center; gap:8px; padding:14px;
-    color:#fff; font-weight:800; text-decoration:none; font-size:1.1rem;
-    box-shadow:0 -3px 16px rgba(0,0,0,.2)}
-  body{padding-bottom:60px}
+  .callbar{position:fixed; left:0; right:0; bottom:0; z-index:50;
+    background:linear-gradient(90deg,var(--red),var(--red-dark));
+    display:flex; align-items:center; justify-content:center; gap:9px;
+    padding:15px 14px calc(15px + env(safe-area-inset-bottom,0px));
+    color:#fff; font-weight:800; text-decoration:none; font-size:1.12rem;
+    box-shadow:0 -4px 20px rgba(0,0,0,.28); animation:callpulse 2.4s ease-in-out infinite}
+  .callbar .ph{display:inline-block; animation:ring 2.4s ease-in-out infinite}
+  @keyframes callpulse{0%,100%{box-shadow:0 -4px 20px rgba(0,0,0,.28)} 50%{box-shadow:0 -4px 28px rgba(200,16,46,.6)}}
+  @keyframes ring{0%,88%,100%{transform:rotate(0)} 90%{transform:rotate(-14deg)} 94%{transform:rotate(14deg)} 97%{transform:rotate(-8deg)}}
+  @media(prefers-reduced-motion:reduce){ .callbar,.callbar .ph{animation:none} }
+  body{padding-bottom:64px}
+
+  /* mobile emergency-first tweaks */
+  @media(max-width:759px){
+    .hero{padding:52px 0 60px}
+    .cta-row{flex-direction:column}
+    .cta-row .btn{width:100%}
+    .hc-full{display:none}
+    .hc-short{display:inline}
+    .header-call .ph-i{display:inline}
+    .header-call{gap:5px; padding:10px 14px}
+    section{padding:44px 0}
+  }
 
   @media(min-width:760px){
     .nav-links{display:flex}
@@ -245,7 +289,7 @@
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="tel:+13055510077" class="btn">Call (305) 551-0077</a>
+    <a href="tel:+13055510077" class="btn header-call"><span class="ph-i">📞</span><span class="hc-full">Call (305) 551-0077</span><span class="hc-short">Call</span></a>
   </div>
 </header>
 
@@ -427,7 +471,7 @@
   </div>
 </footer>
 
-<a href="tel:+13055510077" class="callbar">📞 Call Now — (305) 551-0077</a>
+<a href="tel:+13055510077" class="callbar"><span class="ph">📞</span> Call Now — (305) 551-0077</a>
 
 
 <div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
@@ -437,6 +481,19 @@
   <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#8250;</button>
   <div class="lb-count" id="lbCount"></div>
 </div>
+
+<script>
+// Scroll-reveal: JS adds the hidden state, so no-JS users still see everything.
+(function(){
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = document.querySelectorAll('section:not(.hero) > .wrap');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.06, rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){ el.classList.add('reveal'); io.observe(el); });
+})();
+</script>
 
 <script>
 (function(){
