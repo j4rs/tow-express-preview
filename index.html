@@ -229,6 +229,19 @@
   .gitem img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s ease}
   .gitem:hover img{transform:scale(1.06)}
 
+  /* video */
+  .video-wrap{max-width:820px; margin:8px auto 0}
+  .video-facade{position:relative; aspect-ratio:16/9; border-radius:14px; overflow:hidden; cursor:pointer;
+    background-size:cover; background-position:center; box-shadow:0 14px 34px rgba(20,20,26,.2)}
+  .video-facade::after{content:""; position:absolute; inset:0; background:rgba(0,0,0,.3); transition:background .2s}
+  .video-facade:hover::after{background:rgba(0,0,0,.15)}
+  .video-play{position:absolute; z-index:1; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:78px; height:78px; border-radius:50%; border:0; cursor:pointer; padding:0 0 0 6px;
+    background:var(--red); color:#fff; font-size:1.7rem; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 20px rgba(200,16,46,.55); transition:transform .2s}
+  .video-facade:hover .video-play{transform:translate(-50%,-50%) scale(1.08)}
+  .video-facade iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+
   /* lightbox */
   .lb{position:fixed; inset:0; z-index:60; background:rgba(0,0,0,.92); display:none;
     align-items:center; justify-content:center; padding:24px}
@@ -346,6 +359,18 @@
     <h2 data-es="Sobre Tow Express">About Tow Express</h2>
     <p data-es="Cuando fundamos Tow Express hace más de 17 años, abrimos con una meta simple y clara: brindar el servicio de grúa y asistencia en carretera más confiable posible a nuestros clientes en todo Miami y sus alrededores. Sabíamos que nuestra combinación de equipo y experiencia nos mantendría por delante de la competencia.">When we founded Tow Express over 17 years ago, we opened shop with one simple, all-encompassing goal: to deliver the most reliable towing and roadside assistance services possible to our customers throughout Miami and the surrounding areas. We knew our winning combination of equipment and expertise would keep us ahead of the competition.</p>
     <p data-es="Casi dos décadas después, Tow Express se ha ganado la reputación de ser uno de los principales proveedores de grúas de emergencia de Miami. Además de nuestros servicios de grúa y asistencia en carretera, también compramos autos chatarra. Si su auto llegó al final de su vida útil, ¡Tow Express se lo compra en efectivo en el acto, con recogida gratis el mismo día!">Nearly two decades after our founding, Tow Express has cemented a reputation as one of Miami's premier emergency towing providers. In addition to our basic towing and roadside assistance services, we also buy junk cars. If your car seems to have reached the end of its lifespan, Tow Express will buy it for cash on the spot with free same-day pickup!</p>
+  </div>
+</section>
+
+<section id="video">
+  <div class="wrap">
+    <h2 data-es="Vea a Tow Express en Acción">See Tow Express in Action</h2>
+    <p class="sub" data-es="Un vistazo rápido a nuestro equipo, nuestras grúas y cómo trabajamos en cada servicio.">A quick look at our team, our trucks, and how we handle every job.</p>
+    <div class="video-wrap">
+      <div class="video-facade" data-id="5dkRVt-lUpQ" role="button" tabindex="0" aria-label="Play video / Reproducir video" style="background-image:url('images/video-thumb.jpg')">
+        <button class="video-play" aria-label="Play">▶</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -489,6 +514,26 @@
   <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#8250;</button>
   <div class="lb-count" id="lbCount"></div>
 </div>
+
+<script>
+// Video: lightweight facade — only loads YouTube when the user taps play.
+(function(){
+  var f = document.querySelector('.video-facade');
+  if(!f) return;
+  function play(){
+    var id = f.getAttribute('data-id');
+    var ifr = document.createElement('iframe');
+    ifr.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+    ifr.title = 'Tow Express video';
+    ifr.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    ifr.setAttribute('allowfullscreen', '');
+    f.innerHTML = '';
+    f.appendChild(ifr);
+  }
+  f.addEventListener('click', play);
+  f.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); play(); } });
+})();
+</script>
 
 <script>
 // Bilingual EN/ES — auto-detects browser language, remembers manual choice.
