@@ -7,6 +7,7 @@
 <meta name="description" content="Tow Express: 24/7 towing &amp; roadside assistance in Miami-Dade for over 17 years. Flatbed, long-distance, lockouts, jumpstarts, fuel delivery, junk car buying. Se Habla Español. Call (305) 551-0077.">
 <meta name="theme-color" content="#c8102e">
 <link rel="canonical" href="https://towtrucknearme.com/">
+<link rel="icon" type="image/png" href="images/logo.png">
 
 <!-- Open Graph / social -->
 <meta property="og:type" content="website">
@@ -136,8 +137,9 @@
   header.site{position:sticky; top:0; z-index:40; background:rgba(255,255,255,.96);
     backdrop-filter:saturate(180%) blur(8px); border-bottom:1px solid var(--line)}
   .nav{display:flex; align-items:center; justify-content:space-between; height:62px}
-  .brand{font-weight:800; font-size:1.15rem; letter-spacing:.3px; text-decoration:none; color:var(--ink)}
+  .brand{font-weight:800; font-size:1.15rem; letter-spacing:.3px; text-decoration:none; color:var(--ink); display:flex; align-items:center}
   .brand span{color:var(--red)}
+  .logo{height:38px; width:auto; display:block}
   .nav-links{display:none; gap:22px}
   .nav-links a{color:var(--ink); text-decoration:none; font-weight:600; font-size:.95rem}
   .nav-links a:hover{color:var(--red)}
@@ -190,6 +192,27 @@
   footer a{color:#fff; text-decoration:none; margin:0 8px}
   .soc a{font-size:1.1rem}
 
+  /* gallery */
+  .gallery{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:8px}
+  .gitem{display:block; overflow:hidden; border-radius:10px; aspect-ratio:4/3; background:#e9e9ee}
+  .gitem img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s ease}
+  .gitem:hover img{transform:scale(1.06)}
+
+  /* lightbox */
+  .lb{position:fixed; inset:0; z-index:60; background:rgba(0,0,0,.92); display:none;
+    align-items:center; justify-content:center; padding:24px}
+  .lb.open{display:flex}
+  .lb img{max-width:94vw; max-height:88vh; border-radius:8px; box-shadow:0 8px 40px rgba(0,0,0,.5)}
+  .lb-close,.lb-nav{position:absolute; background:rgba(255,255,255,.14); color:#fff; border:0;
+    cursor:pointer; border-radius:50%; width:52px; height:52px; font-size:26px; line-height:1;
+    display:flex; align-items:center; justify-content:center}
+  .lb-close{top:18px; right:18px; font-size:30px}
+  .lb-nav{top:50%; transform:translateY(-50%)}
+  .lb-prev{left:14px}
+  .lb-next{right:14px}
+  .lb-nav:hover,.lb-close:hover{background:rgba(255,255,255,.28)}
+  .lb-count{position:absolute; bottom:18px; left:50%; transform:translateX(-50%); color:#ddd; font-size:.9rem}
+
   /* sticky mobile call button */
   .callbar{position:fixed; left:0; right:0; bottom:0; z-index:50; background:var(--red);
     display:flex; align-items:center; justify-content:center; gap:8px; padding:14px;
@@ -200,6 +223,8 @@
   @media(min-width:760px){
     .nav-links{display:flex}
     .grid{grid-template-columns:repeat(4,1fr)}
+    .gallery{grid-template-columns:repeat(4,1fr); gap:12px}
+    .logo{height:44px}
     .contact-grid{grid-template-columns:1fr 1fr}
     .callbar{display:none}
     body{padding-bottom:0}
@@ -212,9 +237,10 @@
 
 <header class="site">
   <div class="wrap nav">
-    <a href="#top" class="brand">TOW <span>EXPRESS</span></a>
+    <a href="#top" class="brand"><img src="images/logo.png" alt="Tow Express — 24/7 Towing in Miami" class="logo"></a>
     <nav class="nav-links">
       <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
@@ -268,6 +294,75 @@
     <h2>About Tow Express</h2>
     <p>When we founded Tow Express over 17 years ago, we opened shop with one simple, all-encompassing goal: to deliver the most reliable towing and roadside assistance services possible to our customers throughout Miami and the surrounding areas. We knew our winning combination of equipment and expertise would keep us ahead of the competition.</p>
     <p>Nearly two decades after our founding, Tow Express has cemented a reputation as one of Miami's premier emergency towing providers. In addition to our basic towing and roadside assistance services, we also buy junk cars. If your car seems to have reached the end of its lifespan, Tow Express will buy it for cash on the spot with free same-day pickup!</p>
+  </div>
+</section>
+
+<section id="gallery" class="soft">
+  <div class="wrap">
+    <h2>Our Trucks &amp; Work</h2>
+    <p class="sub">17+ years on Miami roads. State-of-the-art equipment for a damage-free tow — cars, motorcycles, heavy equipment, and more. Tap any photo to enlarge.</p>
+    <div class="gallery" id="galleryGrid">
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-1.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-1.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-2.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-2.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-3.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-3.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-4.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-4.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-5.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-5.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-6.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-6.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-7.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-7.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-8.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-8.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-9.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-9.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-10.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-10.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-11-1.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-11-1.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-11.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-11.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-12.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-12.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-13.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-13.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-14.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-14.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-15.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-15.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-16.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-16.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-17.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-17.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-18.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-18.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-19.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-19.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-20.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-20.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-21.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-21.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-22.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-22.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-23.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-23.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-24.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-24.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-25.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-25.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-26.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-26.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-27.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-27.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-28.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-28.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-29.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-29.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-30.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-30.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Main-31.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Main-31.jpg" alt="Tow Express truck"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-1.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-1.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-2.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-2.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-3.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-3.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-4.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-4.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-5.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-5.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-6.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-6.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-7.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-7.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-8.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-8.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-9.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-9.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-10.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-10.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-11.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-11.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-12.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-12.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-13.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-13.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-14.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-14.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-15.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-15.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-17.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-17.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-18.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-18.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-19.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-19.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_CarsTrucks-20.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_CarsTrucks-20.jpg" alt="Car & truck towing in Miami"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Motorcycles-1.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Motorcycles-1.jpg" alt="Motorcycle towing"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Motorcycles-2.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Motorcycles-2.jpg" alt="Motorcycle towing"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Motorcycles-3.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Motorcycles-3.jpg" alt="Motorcycle towing"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Motorcycles-4.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Motorcycles-4.jpg" alt="Motorcycle towing"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Motorcycles-5.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Motorcycles-5.jpg" alt="Motorcycle towing"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Equipment-1.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Equipment-1.jpg" alt="Equipment transport"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Equipment-2.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Equipment-2.jpg" alt="Equipment transport"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Equipment-3.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Equipment-3.jpg" alt="Equipment transport"></a>
+        <a class="gitem" href="images/gallery/TowExpress_Gallery_Equipment-4.jpg"><img loading="lazy" src="images/gallery/TowExpress_Gallery_Equipment-4.jpg" alt="Equipment transport"></a>
+    </div>
   </div>
 </section>
 
@@ -333,6 +428,45 @@
 </footer>
 
 <a href="tel:+13055510077" class="callbar">📞 Call Now — (305) 551-0077</a>
+
+
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+  <img id="lbImg" src="" alt="Tow Express photo enlarged">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#8250;</button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('#galleryGrid .gitem'));
+  var lb = document.getElementById('lightbox');
+  var img = document.getElementById('lbImg');
+  var count = document.getElementById('lbCount');
+  var i = 0;
+  function show(n){
+    i = (n + links.length) % links.length;
+    img.src = links[i].getAttribute('href');
+    count.textContent = (i+1) + ' / ' + links.length;
+  }
+  function open(n){ show(n); lb.classList.add('open'); document.body.style.overflow='hidden'; }
+  function close(){ lb.classList.remove('open'); img.src=''; document.body.style.overflow=''; }
+  links.forEach(function(a, idx){
+    a.addEventListener('click', function(e){ e.preventDefault(); open(idx); });
+  });
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbNext').addEventListener('click', function(){ show(i+1); });
+  document.getElementById('lbPrev').addEventListener('click', function(){ show(i-1); });
+  lb.addEventListener('click', function(e){ if(e.target === lb) close(); });
+  document.addEventListener('keydown', function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') close();
+    else if(e.key==='ArrowRight') show(i+1);
+    else if(e.key==='ArrowLeft') show(i-1);
+  });
+})();
+</script>
 
 </body>
 </html>
